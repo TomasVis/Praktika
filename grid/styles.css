@@ -1,0 +1,142 @@
+.left-side {
+  grid-area: left;
+}
+.main-content {
+  grid-area: main;
+}
+.right-side {
+  grid-area: right;
+}
+
+.login{
+  grid-area: login;
+  background-color: rgb(66, 66, 66);
+}
+.search{
+  grid-area: search;
+  background-color: rgb(66, 66, 66);
+}
+.logo{
+  grid-area: logo;
+  background-color: rgb(66, 66, 66);
+}
+.nav-container{
+  grid-area: nav;
+  background-color: rgb(66, 66, 66);
+}
+.nav{
+
+  justify-self: end;
+  background-color: black;
+  width: 300px;
+  height: 50px;
+}
+html,
+body {
+  height: 100%;
+}
+.main-page {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    "logo search nav login"
+    "left main main right"
+    "left main main right"
+    "left main main right";
+}
+
+
+
+
+.main-content{
+
+  display: flex;
+  flex-direction: column;
+   flex-grow: 4; 
+}
+
+.right-side {
+  background-color: rgb(223, 225, 236);
+
+}
+ul {
+  display: flex;
+}
+article {
+  display: flex;
+  min-height: 100px;
+  justify-content: space-between;
+}
+.circle {
+  border-radius: 200px 200px 200px 200px;
+  -moz-border-radius: 200px 200px 200px 200px;
+  -webkit-border-radius: 200px 200px 200px 200px;
+  border: 1px solid rgb(182, 182, 182);
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+.question-info {
+  display: flex;
+}
+
+.filter-select {
+  width: 200px;
+  align-self: flex-end;
+  margin: 10px;
+}
+.questions-per-page {
+  width: 50px;
+  align-self: flex-end;
+  margin: 10px;
+}
+.line {
+  border-bottom: 1px solid #a4a4a4;
+  border-left: 1px solid #a4a4a4;
+}
+.drop-down {
+  display: flex;
+  justify-content: flex-end;
+}
+html,
+body{
+  height: 100%;
+}
+
+.blue-button {
+  width: 200px;
+  height: 35px;
+  background-color: rgb(22, 162, 255);
+  margin: 20px;
+}
+
+
+
+
+article:nth-child(odd) {
+  background: rgb(238, 241, 241);
+}
+article:nth-child(odd) .circle:nth-child(even) {
+  background: green;
+}
+select {
+  background-color: rgb(238, 241, 241);
+}
+.tag {
+  border-radius: 20px;
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgb(238, 241, 241);
+  width: 50px;
+  height: 15px;
+  margin: 10px;
+}
+.questions {
+padding:10px;
+}
+.tags{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
