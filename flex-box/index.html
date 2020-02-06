@@ -11,33 +11,53 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <header class="nav-bar">
-      <div>
+      <div class="search-logo-wrapper">
         <div class="logo"></div>
-        <div class="search"></div>
+        <div class="search">
+          <form class="search-form" action="#">
+            <input
+              class="input-text"
+              type="text"
+              name="fname"
+              placeholder="Enter Keyword"
+            />
+            <input class="magnifying-icon" value=" " />
+          </form>
+        </div>
       </div>
       <nav><ul class="nav-links"></ul></nav>
       <div class="login"></div>
     </header>
 
     <main class="main-page">
-      <aside class="container-left"><div class="blue-button"></div></aside>
+      <aside class="side-container"><div class="blue-button"></div></aside>
 
       <section class="main-content">
         <div class="container-border drop-down">
+          <h2 class="category-picker-headline">All Questions</h2>
           <select class="filter-select " name="pages">
-            <option value="category1"></option>
+            <option value="category1">Filter by category</option>
           </select>
         </div>
         <div class="container-border drop-down">
-          <select class="questions-per-page " name="category">
-            <option></option>
-          </select>
+          <div class="selected-category">
+            <h5 class="category-title">Latest</h5>
+            <h5 class="category-title">Votes</h5>
+            <h5 class="category-title">Unanswered</h5>
+          </div>
+          <div class="category-selection-wraper">
+            <h5 class="category-title">Questions per page</h5>
+
+            <select class="questions-per-page " name="category">
+              <option>12</option>
+            </select>
+          </div>
         </div>
 
         <article class="container-border article-container ">
@@ -52,17 +72,26 @@
               fames ac ante ipsum primis in faucibus.
             </p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label">apps</div>
+              <div class="tag-label">business</div>
+              <div class="tag-label">glass</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">technology</div>
             </div>
           </div>
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">70</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">3</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">0</div>
+              <h5>Votes</h5>
+            </div>
           </div>
         </article>
         <article class="container-border article-container ">
@@ -75,18 +104,154 @@
               fames ac ante ipsum primis in faucibus.
             </p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label">android</div>
+              <div class="tag-label">apple</div>
+              <div class="tag-label">apps</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">technology</div>
             </div>
           </div>
 
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">52</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">10</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">2</div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class="container-border article-container ">
+          <div class="question-container">
+            <h4 class="question-header">
+              How to become milionaire in the next 5 years
+            </h4>
+            <p class="question-paragraph">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label">bilionaire</div>
+              <div class="tag-label">business</div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">35</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">3</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">1</div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class="container-border article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="question-paragraph">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label">apps</div>
+              <div class="tag-label">facebook</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">marketing</div>
+              <div class="tag-label">social</div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">22</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">3</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">2</div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class="container-border article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="question-paragraph">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label">apps</div>
+              <div class="tag-label">business</div>
+              <div class="tag-label">glass</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">technology</div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">22</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">3</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">2</div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class="container-border article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="question-paragraph">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label">apps</div>
+              <div class="tag-label">facebook</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">marketing</div>
+              <div class="tag-label">social</div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">33</div>
+              <h5>Views</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">2</div>
+              <h5>Answers</h5>
+            </div>
+            <div class="info-label-wraper">
+              <div class="info-label">0</div>
+              <h5>Votes</h5>
+            </div>
           </div>
         </article>
         <article class="container-border article-container ">
@@ -94,99 +259,77 @@
             <h4 class="question-header"></h4>
             <p></p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label">apps</div>
+              <div class="tag-label">facebook</div>
+              <div class="tag-label">google</div>
+              <div class="tag-label">marketing</div>
+              <div class="tag-label">social</div>
             </div>
           </div>
 
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+          <div class="question-info-container">
+            <div class="info-label-wraper">
+              <div class="info-label">22</div>
+              <h5>Views</h5>
             </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+            <div class="info-label-wraper">
+              <div class="info-label">1</div>
+              <h5>Answers</h5>
             </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+            <div class="info-label-wraper">
+              <div class="info-label">0</div>
+              <h5>Votes</h5>
             </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-            </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
           </div>
         </article>
       </section>
 
-      <aside class="container-right"><div></div></aside>
+      <aside class="side-container">
+        <div class="flex-vertical-container">
+          <h3>Questions</h3>
+          <p class="big-number">13</p>
+        </div>
+        <div class="flex-vertical-container">
+          <h3>Members</h3>
+          <p class="big-number">8</p>
+        </div>
+        <div class="flex-vertical-container">
+          <h4>MOST USED TAGS</h4>
+          <div class="flex-vertical-container">
+            <div class="tag-label">busines</div>
+            <div class="tag-label">marketing</div>
+            <div class="tag-label">google</div>
+            <div class="tag-label">technology</div>
+            <div class="tag-label">apps</div>
+            <div class="tag-label">bilionaire</div>
+            <div class="tag-label">movie</div>
+            <div class="tag-label">glass</div>
+          </div>
+
+          <a href="#" class="link">See more tags</a>
+        </div>
+        <div class="flex-vertical-container">
+          <h4>HOT QUESTIONS</h4>
+          <div class="flex-vertical-container">
+            <div class="flex">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/6.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <a href="#" class="link"
+                >What are the best mobile apps for traveling?</a
+              >
+            </div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </aside>
     </main>
     <footer class="footer">
       <div class="logo"></div>
