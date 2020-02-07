@@ -1,16 +1,19 @@
-
 body {
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
-h1,h2,h3,h4,h5,p{
-  margin:0;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
 }
+
 h4 {
   font-size: 16px;
-  font-weight: 500;
-  text-align: center;
+  font-weight: 700;
 }
 
 h5 {
@@ -21,8 +24,16 @@ h5 {
 
 a {
   text-decoration: none;
+  color: rgb(72, 191, 218);
 }
-.flex{
+
+aside,
+section {
+  overflow: auto;
+}
+
+
+.flex {
   display: flex;
 }
 
@@ -30,9 +41,18 @@ a {
 
 .nav-bar {
   display: flex;
-  justify-content: flex-end;
   background-color: rgb(66, 66, 66);
   height: 80px;
+  justify-content: space-between;
+}
+
+.nav-side {
+  width: 190px;
+}
+
+.nav-center {
+  display: flex;
+  position: relative;
 }
 
 .search-logo-wrapper {
@@ -42,47 +62,33 @@ a {
 .search {
   display: flex;
   align-items: center;
-  
-}
-
-.search-form {
-  display: flex;
-
+  position: relative;
 }
 
 .input-text {
   background: rgb(255, 255, 255);
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  padding:0;
+  border-radius: 25px;
+  padding: 0;
   padding-left: 5px;
   margin: 0;
-  border-width:0;
+  border-width: 0;
+  height: 30px;
+  width: 300px;
 }
 
-.magnifying-icon {
-  width: 25px;
-  height: 25px;
-  background-image: url("http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png");
-  background-repeat: no-repeat;
+.magnifying-glass {
   background-position: -244px -310px;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  padding: 0;
-  border:none;
+  position: absolute;
+  right: 0;
 }
 
-.nav-links {
-  display: flex;
-}
-
-nav {
+.nav {
   background-color: rgb(0, 0, 0);
   width: 300px;
 }
 
 .login {
-  width: 200px;
+  min-width: 190px;
 }
 
 /* Main page */
@@ -97,36 +103,105 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 200px;
-  padding:20px;
+  min-width: 170px;
+  padding-left: 20px;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgb(238, 241, 241);
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+.button-wraper {
+  border-bottom: 2px solid rgb(238, 241, 241);
+  width: 100%;
+  padding: 20px 0 20px 0;
+}
+
+.copyright-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  border-top: 2px solid rgb(238, 241, 241);
+  width: 100%;
+  padding: 20px 0 20px 0;
 }
 
 .blue-button {
-  width: 200px;
+  width: 150px;
   height: 35px;
   background-color: rgb(22, 162, 255);
-  margin: 20px;
+  align-self: center;
+  border-radius: 2px;
 }
-/* Main content */
 
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  font-size: 0.833em;
+}
+
+.pseudo-icon:before {
+  content: "";
+  display: block;
+  background-image: url(http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png);
+  width: 24px;
+  height: 24px;
+  transform: scale(0.6);
+  background-repeat: no-repeat;
+  padding: 0;
+  border: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transform: scale(0.6);
+  background-image: url("http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png");
+  background-repeat: no-repeat;
+  padding: 0;
+  border: none;
+}
+
+.question-mark:before {
+  background-position: -242px -106px;
+}
+
+.tag-icon:before {
+  background-position: -276px -174px;
+}
+
+.badge-icon:before {
+  background-position: -175px -4px;
+}
+
+.category-icon:before {
+  background-position: -141px -379px;
+}
+
+.users-icon:before {
+  background-position: -4px -4px;
+}
+
+/* Main content */
 
 .main-content {
   display: flex;
   flex-direction: column;
 }
 
-.container-border {
-  border-bottom: 1px solid rgb(238, 241, 241);
-  border-left: 1px solid rgb(238, 241, 241);
-}
-
 /* Drop down menu */
 
-.drop-down {
+.select-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:10px;
+  padding: 10px;
+  border: 2px solid rgb(238, 241, 241);
+  border-width: 0 0 2px 2px;
 }
 
 .category-picker-headline {
@@ -135,7 +210,7 @@ nav {
 }
 
 .category-title {
-  margin-left: 10px;
+  margin-right: 10px;
   font-weight: lighter;
 }
 
@@ -143,7 +218,8 @@ nav {
   width: 200px;
 }
 
-.filter-select, .questions-per-page {
+.filter-select,
+.questions-per-page {
   padding: 5px;
   font-size: 12px;
 }
@@ -165,7 +241,7 @@ nav {
 }
 
 .drop-down select {
-  background-color: rgb(163,167,175,0.1);
+  background-color: rgb(163, 167, 175, 0.1);
 }
 
 /* Questions */
@@ -174,6 +250,8 @@ nav {
   display: flex;
   min-height: 100px;
   justify-content: space-between;
+  border: 1px solid rgb(238, 241, 241);
+  border-width: 0 0 2px 2px;
 }
 
 .question-container {
@@ -184,48 +262,68 @@ nav {
 }
 
 .question-header {
-  margin:0;
+  margin: 0;
 }
 
-.question-paragraph{
+.regular-text {
   font-size: 0.833em;
-
 }
 
 .container-right {
   background-color: rgb(223, 225, 236);
-  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 150px;
+  padding: 20px;
 }
 
 .tag-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 10px 0 10px 0;
 }
 
 .tag-label {
   border-radius: 20px;
   border: 1px solid rgb(182, 182, 182);
   background-color: rgb(238, 241, 241);
-  padding:1px 5px 0 5px ;
+  padding: 1px 5px 0 5px;
   height: 15px;
-  margin: 10px;
+  margin: 0 10px 0 0;
   font-size: 12px;
   cursor: pointer;
   transition: transform 0.1s;
 }
 
+.user-tag {
+  border-radius: 3px;
+  border: 1px solid rgb(182, 182, 182);
+  background-color: rgb(167, 43, 150);
+  padding: 1px 5px 0 5px;
+  height: 15px;
+  margin: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.1s;
+  color: rgb(255, 255, 255);
+}
+
 .tag-label:hover {
-  -webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.21);
-  -moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.21);
-  box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.21);
-  transform: scale(1.1);
+  -webkit-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.21);
+  -moz-box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.21);
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.21);
+  transform: scale(1.12);
 }
 
 .question-info-container {
   display: flex;
   min-width: 156px;
+}
 
+.question-details {
+  display: flex;
 }
 
 .info-label {
@@ -242,7 +340,18 @@ nav {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform .3s;
+  transition: transform 0.3s;
+  background: rgb(255, 255, 255);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 35%,
+    rgba(206, 218, 212, 1) 100%
+  );
+}
+
+.user-info-container {
+  display: flex;
+  align-items: center;
 }
 
 .info-label:hover {
@@ -251,110 +360,118 @@ nav {
 
 @keyframes rotation {
   0% {
-    transform: rotate(10deg);
+    transform: rotate(2deg);
   }
   40% {
-    transform: rotate(20deg);
+    transform: rotate(5deg);
   }
   80% {
-    transform: rotate(30deg);
+    transform: rotate(10deg);
   }
   100% {
-    transform: rotate(15deg);
+    transform: rotate(5deg);
   }
 }
 
-
-.main-content>:nth-child(odd) {
-  background-color: rgb(163,167,175,0.1);
+.main-content > :nth-child(odd) {
+  background-color: rgb(163, 167, 175, 0.1);
 }
-article:nth-child(odd) > div.question-info-container > div:nth-child(even) > div {
 
+article:nth-child(odd)
+  > div.question-info-container
+  > div:nth-child(even)
+  > div {
   background: rgb(5, 184, 139);
+  background: radial-gradient(
+    circle,
+    rgba(5, 184, 139, 1) 35%,
+    rgba(59, 221, 255, 1) 100%
+  );
   border: none;
   color: rgb(252, 252, 252);
 }
 
 /* Container Right */
+
 main > aside:nth-child(3) {
-background-color: rgb(163,167,175,0.5);
+  background-color: rgb(163, 167, 175, 0.5);
 }
 
 .flex-vertical-container {
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
+
 .big-number {
   font-size: 30px;
   font-weight: 600;
   margin-top: 10px;
 }
 
-.side-container:nth-child(3) > .flex-vertical-container:nth-child(1),
-.side-container:nth-child(3) > .flex-vertical-container:nth-child(2) {
-  border-left: solid 4px ;
+.right-top-container {
+  border-left: solid 4px;
   padding-left: 5px;
-  margin-top:25px;
+  margin-top: 25px;
   align-self: flex-start;
 }
 
-.side-container:nth-child(3) > .flex-vertical-container:nth-child(1) {
+.right-top-container:nth-child(1) {
   border-color: rgb(22, 162, 255);
 }
 
-.side-container:nth-child(3) > .flex-vertical-container:nth-child(2) {
+.right-top-container:nth-child(2) {
   border-color: rgb(219, 144, 4);
 }
 
-.side-container:nth-child(3) > .flex-vertical-container:nth-child(3) {
+.right-side-container {
+  display: flex;
+  flex-direction: column;
   margin: 20px 0 20px 0;
+  overflow: auto;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 0 0;
+}
+
+.right-tag-container {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 
-aside:nth-child(3) > div:nth-child(3) > div > div.tag-label {
-  margin-left: 0;
+.link {
+  margin: 10px 0 10px 0;
 }
 
-main > aside:nth-child(3) > div:nth-child(3) > div {
-
-  align-items: flex-start;
-}
-
- .link{
-   color: rgb(22, 162, 255);;
- }
-
- .user-image {
+.user-image {
   width: 20px;
   border-radius: 50%;
-  transform: rotate(-10deg)
- }
+  transform: rotate(-10deg);
+  margin: 10px 10px 10px 0;
+}
 
 /* Footer */
 
-.footer{
-
+.footer {
   background-color: rgb(0, 0, 0);
   height: 200px;
 }
 
-
 @media only screen and (max-width: 960px) {
-
   .article-container {
     flex-direction: column;
   }
-
 }
 @media only screen and (max-width: 800px) {
-
-  .side-container:nth-child(3) {
+  .container-right {
     display: none;
   }
-
 }
 @media only screen and (max-width: 600px) {
-
   .side-container:nth-child(1) {
     display: none;
   }
@@ -362,8 +479,4 @@ main > aside:nth-child(3) > div:nth-child(3) > div {
   .tag-container {
     flex-wrap: wrap;
   }
-
-}
-aside, section {
-  overflow: auto;
 }
