@@ -11,182 +11,460 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <header class="nav-bar">
-      <div>
-        <div class="logo"></div>
-        <div class="search"></div>
-      </div>
-      <nav><ul class="nav-links"></ul></nav>
-      <div class="login"></div>
-    </header>
+    <div class="navigation">
+
+      <div class="nav-bar nav-middle">
+        <div class="search">
+          <input
+            class="input-text"
+            type="text"
+            name="fname"
+            placeholder="Enter Keyword"
+          />
+          <img class="magnifying-glass icon" />
+        </div>
+        <div class="nav-links"></div>
+
+    </div>
+
+</div>
 
     <main class="main-page">
-      <aside class="container-left"><div class="blue-button"></div></aside>
+      <aside class="side-container">
+
+        <div class="button-wraper">
+          <div class="blue-button"></div>
+        </div>
+        <div class="left-container">
+          <a class="text-with-icon pseudo-icon question-mark">Questions</a>
+          <a class="text-with-icon pseudo-icon tag-icon">Tags</a>
+          <a class="text-with-icon pseudo-icon badge-icon ">Badges</a>
+          <a class="text-with-icon pseudo-icon category-icon">Categories</a>
+          <a class="text-with-icon pseudo-icon users-icon">Users</a>
+        </div>
+        <div class="copyright-container">
+          <p class="regular-text">&copy; 2015 Enginethemes</p>
+          <a href="#" class="link">Terms & Privacy</a>
+        </div>
+      </aside>
 
       <section class="main-content">
-        <div class="container-border drop-down">
+
+
+          
+<div class="articles-container">
+        <div class="select-container">
+          <h2 class="category-picker-headline">All Questions</h2>
           <select class="filter-select " name="pages">
-            <option value="category1"></option>
+            <option value="category1">Filter by category</option>
           </select>
         </div>
-        <div class="container-border drop-down">
-          <select class="questions-per-page " name="category">
-            <option></option>
-          </select>
+        <div class="select-container">
+          <div class="selected-category">
+            <h5 class="category-title">Latest</h5>
+            <h5 class="category-title">Votes</h5>
+            <h5 class="category-title">Unanswered</h5>
+          </div>
+          <div class="category-selection-wraper">
+            <h5 class="category-title">Questions per page</h5>
+
+            <select class="questions-per-page " name="category">
+              <option>12</option>
+            </select>
+          </div>
         </div>
 
-        <article class="container-border article-container ">
+        <article class=" article-container ">
           <div class="question-container">
             <h4 class="question-header">
               Select coordinates which fall within central
             </h4>
-            <p class="question-paragraph">
+            <p class="regular-text">
               I have a database of coordinates adipiscing elit. Proin facilisis
               est ut ultricies mattis. In vitae velit nec ante viverra
               convallis. Donec vehicula luctus euismod. Interdum et malesuada
               fames ac ante ipsum primis in faucibus.
             </p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">business</div></div>
+              <div class="tag-label"><div class="inside-animation">glass</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">technology</div></div>
+            </div>
+            <div class="user-info-container">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/6.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <p class="regular-text user-name">Marry</p>
+              <div class="user-tag">Proffesor</div>
+              <div class="question-details regular-text">
+                <p>Asked on June 5, 2015 in</p>
+                <a class="link" href="#">Technology</a>
+              </div>
             </div>
           </div>
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">70</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">3</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">0</div></div>
+              <h5>Votes</h5>
+            </div>
           </div>
         </article>
-        <article class="container-border article-container ">
+        <article class=" article-container ">
           <div class="question-container">
             <h4 class="question-header">Another Question</h4>
-            <p class="question-paragraph">
+            <p class="regular-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               facilisis est ut ultricies mattis. In vitae velit nec ante viverra
               convallis. Donec vehicula luctus euismod. Interdum et malesuada
               fames ac ante ipsum primis in faucibus.
             </p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label"><div class="inside-animation">android</div></div>
+              <div class="tag-label"><div class="inside-animation">apple</div></div>
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">technology</div></div>
+            </div>
+            <div class="user-info-container">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/5.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <p class="regular-text user-name">admin</p>
+              <div class="user-tag">Reviewer</div>
+              <div class="question-details regular-text">
+                <p>Asked on March 5, 2015 in</p>
+                <a class="link" href="#">Mobile</a>
+              </div>
             </div>
           </div>
 
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">52</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">10</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">2</div></div>
+              <h5>Votes</h5>
+            </div>
           </div>
         </article>
-        <article class="container-border article-container ">
+        <article class=" article-container ">
+          <div class="question-container">
+            <h4 class="question-header">
+              How to become milionaire in the next 5 years
+            </h4>
+            <p class="regular-text">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label"><div class="inside-animation">bilionaire</div></div>
+              <div class="tag-label"><div class="inside-animation">business</div></div>
+            </div>
+            <div class="user-info-container">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/6.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <p class="regular-text user-name">Marry</p>
+              <div class="user-tag">Proffesor</div>
+              <div class="question-details regular-text">
+                <p>Asked on June 5, 2015 in</p>
+                <a class="link" href="#">Business</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">35</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">3</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">1</div></div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class=" article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="regular-text">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">facebook</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">marketing</div></div>
+              <div class="tag-label"><div class="inside-animation">social</div></div>
+            </div>
+            <div class="user-info-container">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/2.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <p class="regular-text user-name">Smith</p>
+              <div class="user-tag">Train</div>
+              <div class="question-details regular-text">
+                <p>Asked on June 5, 2015 in</p>
+                <a class="link" href="#">Music</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">22</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">2</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">1</div></div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class=" article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="regular-text">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">business</div></div>
+              <div class="tag-label"><div class="inside-animation">glass</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">technology</div></div>
+            </div>
+            <div class="user-info-container">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/6.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <p class="regular-text user-name">Marry</p>
+              <div class="user-tag">Proffesor</div>
+              <div class="question-details regular-text">
+                <p>Asked on June 5, 2015 in</p>
+                <a class="link" href="#">Technology</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">22</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">3</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">2</div></div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class=" article-container ">
+          <div class="question-container">
+            <h4 class="question-header">Why isn't music free</h4>
+            <p class="regular-text">
+              In vitae velit nec ante viverra convallis. Donec vehicula luctus
+              euismod. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus.
+            </p>
+            <div class="tag-container">
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">facebook</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">marketing</div></div>
+              <div class="tag-label"><div class="inside-animation">social</div></div>
+            </div>
+          </div>
+
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">33</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">2</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">0</div></div>
+              <h5>Votes</h5>
+            </div>
+          </div>
+        </article>
+        <article class=" article-container ">
           <div class="question-container">
             <h4 class="question-header"></h4>
             <p></p>
             <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+              <div class="tag-label"><div class="inside-animation">apps</div></div>
+              <div class="tag-label"><div class="inside-animation">facebook</div></div>
+              <div class="tag-label"><div class="inside-animation">google</div></div>
+              <div class="tag-label"><div class="inside-animation">marketing</div></div>
+              <div class="tag-label"><div class="inside-animation">social</div></div>
             </div>
           </div>
 
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
+          <div class="question-info-container">
+            <div >
+              <div class="info-label"><div class="inside-animation">22</div></div>
+              <h5>Views</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">1</div></div>
+              <h5>Answers</h5>
+            </div>
+            <div >
+              <div class="info-label"><div class="inside-animation">0</div></div>
+              <h5>Votes</h5>
             </div>
           </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
         </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-            </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-            </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
-        <article class="container-border article-container ">
-          <div class="question-container">
-            <h4 class="question-header"></h4>
-            <p></p>
-            <div class="tag-container">
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-              <div class="tag-label"></div>
-            </div>
-          </div>
-
-          <div class="question-info">
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-            <div class="info-label"></div>
-          </div>
-        </article>
+      </div>
       </section>
 
-      <aside class="container-right"><div></div></aside>
+      <aside class="container-right">
+
+        <div class="right-top-container">
+          <h3>Questions</h3>
+          <p class="big-number">13</p>
+        </div>
+        <div class="right-top-container">
+          <h3>Members</h3>
+          <p class="big-number">8</p>
+        </div>
+        <div class="right-side-container">
+          <div class="right-headline">
+            <h4>MOST USED TAGS</h4>
+          </div>
+
+          <div class="right-tag-container">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">busines</div></div><p class="regular-text">x 5</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">marketing</div></div><p class="regular-text">x 5</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">google</div></div><p class="regular-text">x 4</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">technology</div></div><p class="regular-text">x 4</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">apps</div></div><p class="regular-text">x 4</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">bilionaire</div></div><p class="regular-text">x 3</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">movie</div></div><p class="regular-text">x 2</p></div class="flex">
+            <div class="align-center"><div class="tag-label"><div class="inside-animation">glass</div></div><p class="regular-text">x 2</p></div class="flex">
+
+          </div>
+
+          <a href="#" class="link">See more tags</a>
+        </div>
+        <div class="right-side-container">
+          <div class="right-headline">
+            <h4>HOT QUESTIONS</h4>
+          </div>
+
+          <div class="flex-vertical-container">
+            <div class="flex">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/6.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <a href="#" class="link"
+                >What are the best mobile apps for traveling?</a
+              >
+            </div>
+            <div class="flex">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/3.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <a href="#" class="link"
+                >What are the best mobile apps for traveling?</a
+              >
+            </div>
+            <div class="flex">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/2.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <a href="#" class="link"
+                >What are the best mobile apps for traveling?</a
+              >
+            </div>
+            <div class="flex">
+              <figure>
+                <img
+                  src="https://randomuser.me/api/portraits/lego/1.jpg "
+                  alt="Lego User"
+                  class="user-image"
+                />
+              </figure>
+              <a href="#" class="link"
+                >What are the best mobile apps for traveling?</a
+              >
+            </div>
+          </div>
+        </div>
+      </aside>
     </main>
     <footer class="footer">
       <div class="logo"></div>
