@@ -2,6 +2,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+b {
+  font-weight: 800;
+}
+
 h1,
 h2,
 h3,
@@ -46,10 +50,30 @@ section {
 
 /* Navigation */
 
+.navigation {
+  position: fixed;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  left:0;
+  z-index: 1;
+  height: 80px;
+  align-items: center;
+  padding-left: 20px;
+}
+
 .nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: rgb(47,54,73);
   height: 80px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 190px 0 190px;
@@ -64,6 +88,7 @@ section {
   align-items: center;
   position: relative;
   height: 30px;
+  width: 300px;
 }
 
 .input-text {
@@ -74,7 +99,7 @@ section {
   margin: 0;
   border-width: 0;
   height: 30px;
-  width: 300px;
+  width: 100%;
 }
 
 .magnifying-glass {
@@ -85,28 +110,55 @@ section {
 
 .nav-links {
   background-color: rgb(0, 0, 0);
-  width: 300px;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-.nav-links > ul {
+.nav-ul {
   display: flex;
+  align-items: center;
+}
+
+.nav-ul > li {
+  margin: 0 6px 0 6px;
+}
+
+.link-text {
+  display: flex;
+  align-items: center;
 }
 
 .expand-link {
   display: flex;
+  cursor: pointer;
+}
+
+.expand-link:hover {
+  color: rgb(0, 159, 245);
 }
 
 .login {
-  min-width: 190px;
+  display: flex;
+  position: fixed;
+  right:0;
+  z-index: 1;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
 }
+
+.login .link {
+  text-align: center
+}
+
 
 /* Main page */
 
 .main-page {
   display: flex;
+  padding-top: 80px;
 }
 
 /* Left side */
@@ -116,6 +168,7 @@ section {
   flex-direction: column;
   align-items: flex-start;
   min-width: 190px;
+  position: fixed;
 
 }
 
@@ -145,7 +198,12 @@ section {
   height: 35px;
   background-color: rgb(22, 162, 255);
   align-self: center;
-  border-radius: 2px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  letter-spacing: 0;
+  cursor: pointer;
+  border-radius: 6px;
+
 }
 
 .text-with-icon {
@@ -153,10 +211,27 @@ section {
   align-items: center;
   font-size: 0.833em;
   cursor: pointer;
+  color: rgb(71, 71, 71);
+  white-space: nowrap;
 }
 
-.link:hover, .text-with-icon:hover {
+.link:hover {
   color:rgb(21, 70, 102);
+}
+.login .link:hover {
+  color: rgb(196, 196, 196);
+}
+
+.text-with-icon:hover {
+  color: rgb(0, 159, 245);
+}
+
+.nav-ul .text-with-icon {
+  color: rgb(177, 177, 177);
+}
+
+.nav-ul .text-with-icon:hover {
+  color: rgb(0, 159, 245);
 }
 
 .pseudo-icon:before {
@@ -169,6 +244,19 @@ section {
   background-repeat: no-repeat;
   padding: 0;
   border: none;
+}
+
+.expand-icon:after {
+  content: "";
+  display: block;
+  background-image: url(http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png);
+  width: 24px;
+  height: 24px;
+  transform: scale(0.6);
+  background-repeat: no-repeat;
+  padding-right: 2px;
+  border: none;
+  background-position: -239px 1px;
 }
 
 .icon {
@@ -252,6 +340,7 @@ section {
 .main-content {
   display: flex;
   flex-direction: column;
+  padding-left:190px ;
 }
 
 /* Drop down menu */
@@ -538,27 +627,102 @@ aside.container-right > div:nth-child(4) > a {
 }
 
 @media only screen and (max-width: 960px) {
-  .article-container {
-    flex-direction: column;
-  }
-}
-@media only screen and (max-width: 800px) {
+
   .container-right {
     display: none;
   }
+
   .nav-bar {
-    padding-right: 0;
+    padding-right: 90px;
   }
+
+  .login {
+    width: 90px;
+
+  }
+
+
+
 }
-@media only screen and (max-width: 600px) {
-  .side-container:nth-child(1) {
+@media only screen and (max-width: 800px) {
+  .article-container {
+    flex-direction: column;
+  }
+
+  .search {
+    width: 150px;
+  }
+
+  .nav-ul {
+    width: 100%;
+  }
+
+  .input-text::placeholder {
+    color: rgba(0, 0, 0, 0);
+  }
+
+
+}
+
+
+@media only screen and (max-width: 650px) {
+
+  .search {
+    width: 100px;
+  }
+
+  .side-container {
     display: none;
   }
+
   .nav-bar {
+    padding-left: 20px;
+
+  }
+
+  .main-content {
     padding-left: 0;
+  }
+
+  .logo {
+    display: none;
   }
 
   .tag-container {
     flex-wrap: wrap;
+  }
+
+  .magnifying-glass {
+  width: 52px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+  .login {
+    display: none;
+  }
+
+  .nav-bar {
+    padding-right: 0;
+  }
+
+  .nav-links {
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+
+  .search {
+    display: none;
+  }
+
+  .nav-bar {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    padding-left: 20px;
   }
 }
