@@ -388,6 +388,10 @@ section {
 
 /* Questions */
 
+.redirect-to-post {
+  cursor: pointer;
+}
+
 .article-container {
   display: flex;
   min-height: 100px;
