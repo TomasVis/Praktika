@@ -52,7 +52,7 @@
 
       <div class="button-wraper">
 
-        <a href="./add-new-post.html">
+        <a href="./edit-post.html">
           <div class="blue-button">+ ASK A QUESTION</div>
         </a>
       </div>
@@ -77,8 +77,25 @@
       </div>
     </aside>
 
-    <section class="main-content" id="update">
-
+    <section class="main-content">
+      <div class="form-container">
+            <form action="/update-post" method="POST">
+            <input type="hidden" id="id" name="id" value="">
+              Name:<br>
+              <input type="text" id="author" name="author" value="">
+              <br>
+              Date:<br>
+              <input type="date" id="date" name="date" value="" >
+              <br><br>
+              Title:<br>
+              <input type="text" id="title" name="title" value="">
+              <br><br>
+              Explanation:<br>
+              <input type="text" id="content" name="content" value="">
+              <br><br>
+              <input type="submit" id="save" name="save" value="Save">      
+              <input type="submit" id="delete" name="delete" value="Delete">      
+          </div>
     </section>
 
     <aside class="container-right">
@@ -190,7 +207,7 @@
     <nav></nav>
     <div class="login"></div>
   </footer>
-  <script src="../scripts/custom.js"></script>
+  <script src="../scripts/editPage.js"></script>
 </body>
 
 </html>

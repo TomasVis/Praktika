@@ -1,6 +1,9 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+/* html, body, .main-page {
+  height: 100%;
+} */
 
 b {
   font-weight: 800;
@@ -156,7 +159,11 @@ section {
 
 .main-page {
   display: flex;
+  justify-content: space-between;
   padding-top: 80px;
+}
+.hidden {
+  display: none;
 }
 
 /* Left side */
@@ -329,10 +336,19 @@ section {
 
 /* Main content */
 
+
+
 .main-content {
   display: flex;
   flex-direction: column;
   padding-left: 190px;
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Drop down menu */

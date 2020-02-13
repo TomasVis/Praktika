@@ -1,26 +1,39 @@
-"use strict";
+(function() {
+  let generateTags = array => {
+    let tagString = "";
+    array.forEach(
+      el =>
+        (tagString += `<div class="tag-label"><div class="inside-animation">${el}</div></div>`)
+    );
+    return `<div class="tag-container">${tagString}</div>`;
+  };
+  let generateStatisticsBlock = array => {
+    let tagString = "";
+    let text = ["Views", "Answers", "Votes"];
+    array.forEach(
+      (el, index) =>
+        (tagString =
+          tagString +
+          `<div >
+            <div class="info-label">
+              <div class="inside-animation">${el}</div>
+            </div>
+            <p class="regular-text">${text[index]}</p>
+          </div>`)
+    );
+    return `<div class="question-info-container">${tagString}</div>`;
+  };
 
-var createTags = array => {
-  var tagString = "";
-  array.forEach(
-    el =>
-      (tagString =
-        tagString +
-        `<div class="tag-label"><div class="inside-animation">${el}</div></div>`)
-  );
-
-  return `<div class="tag-container">${tagString}</div>`;
-};
-
-var createArticle = articleInfo => {
-  var articleNode = `<div class="question-container">
-  <a href="../views/edit-page.html?id=${
+  let generateArticle = articleInfo => {
+    let stats = [articleInfo.views, articleInfo.answers, articleInfo.votes];
+    let articleNode = `<div class="question-container">
+  <a href="../views/edit-post.html?id=${
     articleInfo.id
   }" class="redirect-to-post" id=${articleInfo.id}>
   <h4 class="question-header">${articleInfo.title}</h4>
   <p class="regular-text">${articleInfo.content}</p>
   </a>
- ${createTags(articleInfo.tags)}
+ ${generateTags(articleInfo.tags)}
   <div class="user-info-container">
     <figure>
       <img
@@ -36,94 +49,26 @@ var createArticle = articleInfo => {
       <a class="link" href="#">${articleInfo.category}</a>
     </div>
   </div>
-</div>
-<div class="question-info-container">
-  <div >
-    <div class="info-label"><div class="inside-animation">${
-      articleInfo.views
-    }</div></div>
-    <p class="regular-text">Views</p>
-  </div>
-  <div >
-    <div class="info-label"><div class="inside-animation">${
-      articleInfo.answers
-    }</div></div>
-    <p class="regular-text">Answers</p>
-  </div>
-  <div >
-    <div class="info-label"><div class="inside-animation">${
-      articleInfo.votes
-    }</div></div>
-    <p class="regular-text">Votes</p>
-  </div>
-</div>`;
+</div>${generateStatisticsBlock(stats)}
+`;
 
-  return articleNode;
-};
-
-function loadPosts() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var obj = JSON.parse(this.response);
-      obj.forEach(element => {
-        var newcontent = document.createElement("article");
-        newcontent.className = "article-container";
-        newcontent.innerHTML = createArticle(element);
-        document.getElementById("articles").appendChild(newcontent);
-      });
-    }
+    return articleNode;
   };
-  xhttp.open("GET", "./posts", true);
-  xhttp.send();
-}
 
-function editPost() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var newcontent = document.createElement("div");
-      newcontent.className = "form-container";
-      newcontent.innerHTML = generateUpdateForm(JSON.parse(this.response));
-      document.getElementById("update").appendChild(newcontent);
-    }
-  };
-  xhttp.open("GET", "../get-post" + window.location.search);
-  xhttp.send();
-}
-
-if (document.getElementById("articles")) {
-  loadPosts();
-
-}
-if (document.getElementById("update")) {
-  editPost();
-}
-
-function generateUpdateForm(parameters) {
-  var formString = `<div class="form-container">
-<h1>Edit Page</h1>
-    <form action="/update-post" method="POST">
-    <input type="hidden" name="id" value=${parameters.id}>
-      Name:<br>
-      <input type="text" name="author" value=${parameters.author}>
-      <br>
-      Date:<br>
-      <input type="date" name="date" value="${parameters.date}" >
-      <br><br>
-      Title:<br>
-      <input type="text" name="title" value="${parameters.title}">
-      <br><br>
-      Explanation:<br>
-      <input type="text" name="content" value="${parameters.content}">
-      <br><br>
-      <input type="submit" value="Save">
-
-    </form> 
-    <form action="/delete-post" method="POST">
-    <input type="hidden" name="id" value=${parameters.id}>
-    <input type="submit" value="Delete">
-    </form>
-  </div>`;
-  return formString;
-}
+  (function loadPosts() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        let obj = JSON.parse(this.response);
+        obj.forEach(element => {
+          let newcontent = document.createElement("article");
+          newcontent.className = "article-container";
+          newcontent.innerHTML = generateArticle(element);
+          document.getElementById("articles").appendChild(newcontent);
+        });
+      }
+    };
+    xhttp.open("GET", "./posts", true);
+    xhttp.send();
+  })();
+})();

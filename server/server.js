@@ -21,35 +21,37 @@ app.get("/get-post", function(req, res) {
 });
 
 app.post("/update-post", function(req, res) {
-  req.body.id = Number(req.body.id)
-  let index = posts.findIndex(obj => Number(obj.id) === Number(req.body.id))
-  let newObject = {...posts[index], ...req.body};
-  posts[index] = newObject;
+  console.log(req.body)
+  if(req.body.hasOwnProperty("delete")) {
 
+    let index = posts.findIndex(obj => Number(obj.id) === Number(req.body.id))
+    posts.splice(index,1)
+  }
+  else if(req.body.id){
+    req.body.id = Number(req.body.id)
+    let index = posts.findIndex(obj => Number(obj.id) === Number(req.body.id))
+    let newObject = {...posts[index], ...req.body};
+    posts[index] = newObject;
+  }
+  else {
+    posts.push(createNewPost(req.body))
+  }
   res.sendFile('index.html', { root: path.join(__dirname, './public') });
 });
 
-app.post("/delete-post", function(req, res) {
-  let index = posts.findIndex(obj => Number(obj.id) === Number(req.body.id))
-  posts.splice(index,1)
-  res.sendFile('index.html', { root: path.join(__dirname, './public') });
-});
+// app.post("/", function(req, res) {
+//   posts.push(createNewPost(req.body))
+//   res.sendFile('index.html', { root: path.join(__dirname, './public') });
 
-
-app.post("/", function(req, res) {
-  posts.push(createNewPost(req.body))
-  res.sendFile('index.html', { root: path.join(__dirname, './public') });
-
-});
+// });
 
 app.listen(3000, function() {
   console.log("CORS-enabled web server listening on port 3000");
 });
 
-
 let createNewPost = (body) => {
   let newPost = {
-    id: posts.length,
+    id: nextId,
     date: body.date,
     author: body.author,
     photo:"https://randomuser.me/api/portraits/lego/1.jpg",
@@ -62,7 +64,7 @@ let createNewPost = (body) => {
     title: body.title,
     content: body.content
   }
-
+  nextId++
 return newPost
 }
 
@@ -128,3 +130,5 @@ let posts = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis est ut ultricies mattis. In vitae velit nec ante viverra convallis. Donec vehicula luctus euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus."
   }
 ];
+
+let nextId = posts.length
