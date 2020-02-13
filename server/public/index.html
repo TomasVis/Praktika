@@ -25,7 +25,7 @@
         </div>
         <div class="nav-links">
           <ul class="nav-ul">
-            <li><a href="#">
+            <li><a href="./index.html">
                 <div class="text-with-icon">Home</div>
               </a></li>
             <li><a class="text-with-icon expand-icon">About us</a></li>
@@ -52,7 +52,7 @@
 
       <div class="button-wraper">
 
-        <a href="./add-new-post.html">
+        <a href="../views/add-new-post.html">
           <div class="blue-button">+ ASK A QUESTION</div>
         </a>
       </div>
@@ -78,23 +78,28 @@
     </aside>
 
     <section class="main-content">
-<div class="form-container">
-      <form action="/new-post" method="POST">
-        Name:<br>
-        <input type="text" name="author" value="Enter Your Name">
-        <br>
-        Date:<br>
-        <input type="date" name="date" >
-        <br><br>
-        Title:<br>
-        <input type="text" name="title" value="Your Question">
-        <br><br>
-        Explanation:<br>
-        <input type="text" name="content" value="Explain Your Question">
-        <br><br>
-        <input type="submit" value="Save">
-      </form> 
-    </div>
+      <div class="articles-container" id="articles">
+        <div class="select-container">
+          <h2 class="category-picker-headline">All Questions</h2>
+          <select class="filter-select " name="pages">
+            <option value="category1">Filter by category</option>
+          </select>
+        </div>
+        <div class="select-container">
+          <div class="selected-category">
+            <h5 class="category-title">Latest</h5>
+            <h5 class="category-title">Votes</h5>
+            <h5 class="category-title">Unanswered</h5>
+          </div>
+          <div class="category-selection-wraper">
+            <h5 class="category-title">Questions per page</h5>
+
+            <select class="questions-per-page " name="category">
+              <option>12</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </section>
 
     <aside class="container-right">

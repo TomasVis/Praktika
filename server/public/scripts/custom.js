@@ -1,7 +1,7 @@
 "use strict";
 
-let createTags = array => {
-  let tagString = "";
+var createTags = array => {
+  var tagString = "";
   array.forEach(
     el =>
       (tagString =
@@ -12,13 +12,14 @@ let createTags = array => {
   return `<div class="tag-container">${tagString}</div>`;
 };
 
-let createArticle = articleInfo => {
-  console.log(articleInfo);
-  let articleNode = `<div class="question-container">
-  <div class="redirect-to-post" id=${articleInfo.id}>
+var createArticle = articleInfo => {
+  var articleNode = `<div class="question-container">
+  <a href="../views/edit-page.html?id=${
+    articleInfo.id
+  }" class="redirect-to-post" id=${articleInfo.id}>
   <h4 class="question-header">${articleInfo.title}</h4>
   <p class="regular-text">${articleInfo.content}</p>
-  </div>
+  </a>
  ${createTags(articleInfo.tags)}
   <div class="user-info-container">
     <figure>
@@ -64,17 +65,16 @@ function loadPosts() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      const myJson = JSON.parse(this.response);
-      const obj = JSON.parse(myJson);
+      var obj = JSON.parse(this.response);
       obj.forEach(element => {
-        let newcontent = document.createElement("article");
+        var newcontent = document.createElement("article");
         newcontent.className = "article-container";
         newcontent.innerHTML = createArticle(element);
         document.getElementById("articles").appendChild(newcontent);
       });
     }
   };
-  xhttp.open("GET", "http://localhost:3000/posts", true);
+  xhttp.open("GET", "./posts", true);
   xhttp.send();
 }
 
@@ -82,28 +82,48 @@ function editPost() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.response)
+      var newcontent = document.createElement("div");
+      newcontent.className = "form-container";
+      newcontent.innerHTML = generateUpdateForm(JSON.parse(this.response));
+      document.getElementById("update").appendChild(newcontent);
     }
   };
-  xhttp.open("POST", "http://localhost:3000/edit-post", true);
+  xhttp.open("GET", "../get-post" + window.location.search);
   xhttp.send();
 }
 
 if (document.getElementById("articles")) {
-  loadPosts()
-  let theParent = document.querySelector("#articles");
-  theParent.addEventListener("click", onClick, false);
+  loadPosts();
+
+}
+if (document.getElementById("update")) {
+  editPost();
 }
 
+function generateUpdateForm(parameters) {
+  var formString = `<div class="form-container">
+<h1>Edit Page</h1>
+    <form action="/update-post" method="POST">
+    <input type="hidden" name="id" value=${parameters.id}>
+      Name:<br>
+      <input type="text" name="author" value=${parameters.author}>
+      <br>
+      Date:<br>
+      <input type="date" name="date" value="${parameters.date}" >
+      <br><br>
+      Title:<br>
+      <input type="text" name="title" value="${parameters.title}">
+      <br><br>
+      Explanation:<br>
+      <input type="text" name="content" value="${parameters.content}">
+      <br><br>
+      <input type="submit" value="Save">
 
-function onClick(e) {
-  //if (e.target !== e.currentTarget) {
-    if (e.target.parentElement.className == "redirect-to-post") {
-      editPost()
-      //location.href = "http://localhost:3000/edit-page.html";
-        let clickedItem = e.target.id;
-        console.log(e.target.parentElement.id)
-        console.log(e.target.parentElement.className)
-    }
-    e.stopPropagation();
+    </form> 
+    <form action="/delete-post" method="POST">
+    <input type="hidden" name="id" value=${parameters.id}>
+    <input type="submit" value="Delete">
+    </form>
+  </div>`;
+  return formString;
 }

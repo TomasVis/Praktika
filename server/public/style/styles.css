@@ -388,6 +388,10 @@ section {
 
 /* Questions */
 
+a.redirect-to-post {
+  color: rgb(71, 71, 71);
+}
+
 .redirect-to-post {
   cursor: pointer;
 }
