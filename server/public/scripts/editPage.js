@@ -17,7 +17,15 @@
     for (const key in postValues) {
       if (document.getElementById(key)) {
         let element = document.getElementById(key);
-        element.setAttribute("value", postValues[key]);
+        if(element.id === "content") {
+          element.innerHTML =  postValues[key];
+        }
+        else {
+          element.setAttribute("value", postValues[key]);
+        }
+        
+
+
       }
     }
   };

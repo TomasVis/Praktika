@@ -1,3 +1,10 @@
+/* label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+} */
+
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -123,7 +130,7 @@ section {
 }
 
 .nav-ul > li {
-  margin: 0 6px 0 6px;
+  margin: 0 11px 0 11px;
 }
 
 .link-text {
@@ -162,6 +169,31 @@ section {
   justify-content: space-between;
   padding-top: 80px;
 }
+
+/* Form */
+
+.input-field {
+  font-family: "Roboto", sans-serif; ;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(163, 167, 175, 0.5);
+  box-shadow: 1px 1px 1px rgb(163, 167, 175);
+}
+
+.form-buttons-container {
+  display: flex;
+  padding-top: 10px;
+}
+
+.input-title {
+  width: calc(100% - 20px);
+}
+
+.form-label {
+  display: block;
+  margin: 10px 0 10px 0;
+}
+
 .hidden {
   display: none;
 }
@@ -184,9 +216,23 @@ section {
   width: calc(100% - 40px);
 }
 
-.button-wraper {
+.ask-question-container {
   border-bottom: 2px solid rgb(238, 241, 241);
   padding: 20px;
+}
+
+.btn-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 136px;
+  height: 35px;
+  background-color: rgb(22, 162, 255);
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  letter-spacing: 0;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 .copyright-container {
@@ -195,18 +241,6 @@ section {
   border-top: 2px solid rgb(238, 241, 241);
   padding: 20px;
   width: calc(100% - 40px);
-}
-
-.blue-button {
-  width: 136px;
-  height: 35px;
-  background-color: rgb(22, 162, 255);
-  align-self: center;
-  color: rgb(255, 255, 255);
-  font-size: 12px;
-  letter-spacing: 0;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
 .text-with-icon {
@@ -254,12 +288,11 @@ section {
   display: block;
   background-image: url(http://www.trenatics.com/public/images/iconfile/sprites/css-sprite/sprite-action-grey600.png);
   width: 24px;
-  height: 24px;
-  transform: scale(0.6);
+  height: 15px;
+  transform: scale(0.8);
   background-repeat: no-repeat;
-  padding-right: 2px;
   border: none;
-  background-position: -239px 1px;
+  background-position: -239px -6px;
 }
 
 .icon {
@@ -351,6 +384,14 @@ section {
   align-items: center;
 }
 
+.edit-form {
+
+  padding: 50px;
+  margin: 50px;
+  border: 2px solid rgba(163, 167, 175, 0.5);
+  border-radius: 10px;
+}
+
 /* Drop down menu */
 
 .select-container {
@@ -426,6 +467,10 @@ a.redirect-to-post {
   flex-direction: column;
   overflow: auto;
   width: 100%;
+}
+
+.question-info-container .regular-text {
+  text-align: center;
 }
 
 .question-header {
@@ -568,7 +613,6 @@ article:nth-child(odd)
     rgba(5, 184, 139, 1) 35%,
     rgba(59, 221, 255, 1) 100%
   );
-  border: none;
   color: rgb(252, 252, 252);
 }
 
@@ -710,6 +754,12 @@ aside.container-right > div:nth-child(4) > a {
   .nav-links {
     padding-right: 20px;
   }
+
+  .edit-form {
+    margin: 10px;
+    padding: 10px;
+  }
+
 }
 
 @media only screen and (max-width: 340px) {

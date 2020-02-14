@@ -13,7 +13,7 @@
 <body>
   <div class="navigation">
 
-    <div class="logo"><b>QA</b>ENGINE</div>
+    <div class="logo"><b>QA</b><p>ENGINE</p></div>
     <div class="nav-bar">
 
 
@@ -50,10 +50,10 @@
   <main class="main-page">
     <aside class="side-container">
 
-      <div class="button-wraper">
+      <div class="ask-question-container">
 
-        <a href="./edit-post.html">
-          <div class="blue-button">+ ASK A QUESTION</div>
+        <a href="../views/edit-post.html">
+          <div class="btn-blue">+ ASK A QUESTION</div>
         </a>
       </div>
       <div class="left-container">
@@ -79,22 +79,29 @@
 
     <section class="main-content">
       <div class="form-container">
-            <form action="/update-post" method="POST">
-            <input type="hidden" id="id" name="id" value="">
-              Name:<br>
-              <input type="text" id="author" name="author" value="">
-              <br>
-              Date:<br>
-              <input type="date" id="date" name="date" value="" >
-              <br><br>
-              Title:<br>
-              <input type="text" id="title" name="title" value="">
-              <br><br>
-              Explanation:<br>
-              <input type="text" id="content" name="content" value="">
-              <br><br>
-              <input type="submit" id="save" name="save" value="Save">      
-              <input type="submit" id="delete" name="delete" value="Delete">      
+            <form class="edit-form" action="/update-post" method="POST">
+            <input class="input-field" type="hidden" id="id" name="id" value="">
+
+              <label class="form-label" for="title">Name:</label>
+              <input class="input-field" type="text" id="author" name="author" value="">
+
+
+              <label class="form-label" for="date">Date:</label>
+              <input class="input-field" type="date" id="date" name="date" value="" >
+
+
+              <label class="form-label" for="title">Title:</label>
+              <input class="input-field input-title" type="text" id="title" name="title" value="">
+
+
+              <label class="form-label" for="content">Explanation:</label>
+              <textarea class="input-field" id="content" name="content" rows="7" cols="40" value=""></textarea>
+              <div class="form-buttons-container"> 
+                <input class="btn-blue" type="submit" id="save" name="save" value="Save">      
+                <input class="btn-blue" type="submit" id="delete" name="delete" value="Delete">
+              </div>
+  
+              </form>   
           </div>
     </section>
 
