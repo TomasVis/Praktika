@@ -21,6 +21,8 @@ app.get("/get-post", function(req, res) {
 });
 
 app.post("/update-post", function(req, res) {
+  console.log(req)
+  console.log(req.query.id)
   console.log(req.body)
   if(req.body.hasOwnProperty("delete")) {
 
@@ -36,7 +38,8 @@ app.post("/update-post", function(req, res) {
   else {
     posts.push(createNewPost(req.body))
   }
-  res.sendFile('index.html', { root: path.join(__dirname, './public') });
+  res.json("complete")
+  //res.sendFile('index.html', { root: path.join(__dirname, './public') });
 });
 
 // app.post("/", function(req, res) {
