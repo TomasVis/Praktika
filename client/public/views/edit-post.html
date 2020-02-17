@@ -101,12 +101,11 @@
 
       <section class="main-content">
         <div class="form-container">
-          <!-- <form class="edit-form" onsubmit="onsubmit()" action="/update-post" method="POST"> -->
-          <form id="form" class="edit-form" onsubmit="onsubmit()">
+          <form id="form" class="edit-form">
             <input
               class="input-field"
               type="hidden"
-              id="id"
+              id="post-id"
               name="id"
               value=""
             />
@@ -147,44 +146,21 @@
               cols="40"
               value=""
             ></textarea>
-            <button
-              class="btn-blue"
-              type="submit"
-              id="save"
-              name="save"
-              value="Save"
-              onsubmit="submit"
-            >
-              Save
-            </button>
-            <button
-              class="btn-blue red"
-              type="submit"
-              id="delete"
-              name="delete"
-              value="Delete"
-            >
-              Delete
-            </button>
             <div class="form-buttons-container">
-              <!-- <input
+               <button
                 class="btn-blue"
-                type="submit"
-                onclick="save()"
                 id="save"
                 name="save"
                 value="Save"
-              />
-              <input
+              >Save</button>
+              <button
                 class="btn-blue red"
-                type="submit"
                 id="delete"
                 name="delete"
                 value="Delete"
-              /> -->
+              >Delete</button>
             </div>
           </form>
-          <button id="klikas"></button>
         </div>
       </section>
 
