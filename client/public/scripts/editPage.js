@@ -23,7 +23,7 @@ function submit(event) {
 
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.onreadystatechange = function() {
-    if (xhr.status === 200) {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 
       window.location = 'http://localhost:80/index.html';
     }
@@ -46,7 +46,7 @@ function loadId() {
 
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.status === 200) {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         fillForm(JSON.parse(xhr.response)); 
     }
   };

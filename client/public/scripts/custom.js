@@ -23,18 +23,18 @@ function generateStatisticsBlock(array) {
   return '<div class="question-info-container">'.concat(tagString, '</div>');
 }
 
-class articleInfoModel {
-  constructor(name, value) {
-    this.name = name;
-    this.value = value;
-  }
-}
+// class articleInfoModel {
+//   constructor(name, value) {
+//     this.name = name;
+//     this.value = value;
+//   }
+// }
 
 function generateArticle(articleInfo) {
   let statsv2 = [
-    new articleInfoModel('Views', articleInfo.views),
-    new articleInfoModel('Answers', articleInfo.answers),
-    new articleInfoModel('Votes', articleInfo.votes)
+    {name:'Views', value: articleInfo.views},
+    {name:'Answers', value: articleInfo.answers},
+    {name:'Votes',value: articleInfo.votes}
   ];
 
   let articleNode = '<div class="question-container"><a href="../views/edit-post.html?id='.concat(articleInfo.id, '" class="redirect-to-post" id=')
