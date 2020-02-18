@@ -1,5 +1,5 @@
 'use strict';
-
+(function(){
 document.getElementById('save').addEventListener('click', submit);
 document.getElementById('delete').addEventListener('click', submit);
 let isEdit = window.location.search;
@@ -10,8 +10,9 @@ if (isEdit) {
 if (!isEdit) {
   document.getElementById('delete').className = 'hidden';
 }
-
+})()
 function submit(event) {
+  event.preventDefault()
   let url = 'http://localhost:3000/update-post' + window.location.search;
   let form = generateForm();
   if (event.target.id === 'delete') {
@@ -22,7 +23,7 @@ function submit(event) {
 
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.onreadystatechange = function() {
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+    if (xhr.status === 200) {
 
       window.location = 'http://localhost:80/index.html';
     }
@@ -45,7 +46,7 @@ function loadId() {
 
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+    if (xhr.status === 200) {
         fillForm(JSON.parse(xhr.response)); 
     }
   };
@@ -66,3 +67,4 @@ function fillForm(postValues) {
     }
   }
 }
+
