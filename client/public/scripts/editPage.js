@@ -1,70 +1,70 @@
-'use strict';
-(function(){
-document.getElementById('save').addEventListener('click', submit);
-document.getElementById('delete').addEventListener('click', submit);
-let isEdit = window.location.search;
-if (isEdit) {
-  loadId();
-}
-
-if (!isEdit) {
-  document.getElementById('delete').className = 'hidden';
-}
-})()
-function submit(event) {
-  event.preventDefault()
-  let url = 'http://localhost:3000/update-post' + window.location.search;
+"use strict";
+const submit = function (event) {
+  event.preventDefault();
+  let url = "http://localhost:3000/update-post" + window.location.search;
   let form = generateForm();
-  if (event.target.id === 'delete') {
-    form.delete = 'delete';
+  if (event.target.id === "delete") {
+    form.delete = "delete";
   }
   let xhr = new XMLHttpRequest();
-  xhr.open('POST', url, true);
-
-  xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-
-      window.location = 'http://localhost:80/index.html';
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      window.location = "../index.html";
     }
   };
-
   xhr.send(JSON.stringify(form));
 }
 
-function generateForm() {
-  let form = {};
-  form.id = document.getElementById('post-id').value;
-  form.author = document.getElementById('author').value;
-  form.date = document.getElementById('date').value;
-  form.title = document.getElementById('title').value;
-  form.content = document.getElementById('content').value;
-  return form;
-}
-
-function loadId() {
-
-  let xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        fillForm(JSON.parse(xhr.response)); 
-    }
+const generateForm = function () {
+  let form = {
+    id: document.getElementById("post-id").value,
+    author: document.getElementById("author").value,
+    date: document.getElementById("date").value,
+    title: document.getElementById("title").value,
+    content: document.getElementById("content").value
   };
-  xhr.open('GET', 'http://localhost:3000/get-post' + window.location.search);
+
+  return form;
+
+}
+const createXHR = function (method, url, callback) {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = callback;
+  xhr.open(method, url);
   xhr.send();
 }
 
-function fillForm(postValues) {
-  for (let key in postValues) {
+const getPostById = function () {
+  createXHR("GET","http://localhost:3000/get-post" + window.location.search, function() {
+    if (this.status === 200) {
+      fillForm(JSON.parse(this.response));
+    }
+  })
+}
+
+const fillForm = function (post) {
+  for (let key in post) {
     if (document.getElementById(key)) {
       let element = document.getElementById(key);
-
-      if (element.id === 'content') {
-        element.innerHTML = postValues[key];
+      if (element.id === "content") {
+        element.innerHTML = post[key];
       } else {
-        element.setAttribute('value', postValues[key]);
+        element.setAttribute("value", post[key]);
       }
     }
   }
 }
+
+
+  document.getElementById("save").addEventListener("click", submit);
+  document.getElementById("delete").addEventListener("click", submit);
+  let isEdit = window.location.search;
+  if (isEdit) {
+    getPostById();
+  }
+  if (!isEdit) {
+    document.getElementById("delete").className = "hidden";
+  }
 
