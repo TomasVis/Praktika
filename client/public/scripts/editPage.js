@@ -46,7 +46,7 @@ const onSuccsessRedirect = function() {
 
 const onSuccsessFillForm = function() {
   if (this.status === 200) {
-    fillForm(JSON.parse(this.response));
+    fillPostWithData(JSON.parse(this.response));
   }
 };
 
@@ -62,18 +62,13 @@ const createPostObject = function() {
   return form;
 };
 
-const fillForm = function(post) {
-  for (let key in post) {
-    if (document.getElementById(key)) {
-      let element = document.getElementById(key);
-      if (element.id === "content") {
-        element.innerHTML = post[key];
-      } else {
-        element.setAttribute("value", post[key]);
-      }
-    }
-  }
-};
+const fillPostWithData = function(post) {
+   document.getElementById("post-id").value = post.id,
+   document.getElementById("author").value = post.author
+   document.getElementById("date").value = post.date
+   document.getElementById("title").value = post.title
+   document.getElementById("content").value = post.content
+}
 
 document.getElementById("save").addEventListener("click", sendUpdateRequest);
 document.getElementById("delete").addEventListener("click", sendDeleteRequest);
