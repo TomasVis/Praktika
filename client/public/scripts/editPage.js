@@ -41,13 +41,13 @@ const sendPostDataRequest = function() {
 const onSuccsessRedirect = function() {
   if (this.status === 200) {
     window.location = "../index.html";
-  }
+  };
 };
 
 const onSuccsessFillForm = function() {
   if (this.status === 200) {
     fillPostWithData(JSON.parse(this.response));
-  }
+  };
 };
 
 const createPostObject = function() {
@@ -63,11 +63,11 @@ const createPostObject = function() {
 };
 
 const fillPostWithData = function(post) {
-   document.getElementById("post-id").value = post.id,
-   document.getElementById("author").value = post.author
-   document.getElementById("date").value = post.date
-   document.getElementById("title").value = post.title
-   document.getElementById("content").value = post.content
+   document.getElementById("post-id").value = post.id;
+   document.getElementById("author").value = post.author;
+   document.getElementById("date").value = post.date;
+   document.getElementById("title").value = post.title;
+   document.getElementById("content").value = post.content;
 }
 
 document.getElementById("save").addEventListener("click", sendUpdateRequest);

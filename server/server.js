@@ -48,11 +48,11 @@ app.listen(3000, function() {
   console.log('CORS-enabled web server listening on port 3000');
 });
 
-let createNewPost = (body) => {
+let createNewPost = (postData) => {
   let newPost = {
     id: nextId,
-    date: body.date,
-    author: body.author,
+    date: postData.date,
+    author: postData.author,
     photo:'https://randomuser.me/api/portraits/lego/1.jpg',
     userTag: 'Reviewer',
     views:0,
@@ -60,11 +60,11 @@ let createNewPost = (body) => {
     votes:0,
     tags:['android', 'apple', 'apps', 'google', 'technology'],
     category: 'Mobile',
-    title: body.title,
-    content: body.content
-  }
+    title: postData.title,
+    content: postData.content
+  };
   nextId++
 return newPost;
-}
+};
 
 let nextId = posts.length;
